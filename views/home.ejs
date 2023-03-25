@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Trending GIFs</title>
+    </head>
+
+    <body>
+        <form action="/search" method="GET">
+            <input type="search" name="search" id="search" placeholder="Search for a GIF">
+            <input type="submit" value="Submit">
+        </form>
+        <div class="row">
+            <% data.forEach(element=> { %>
+                <div class="column">
+                    <img id="pic" src="<%= element.images.original.url %>" alt="<%= element.title %> ">
+                </div>
+                <% }) %>
+        </div>
+    </body>
+
+</html>
